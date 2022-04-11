@@ -16,7 +16,7 @@
 
 <hr>
 <h2>⚜️Descriçao⚜️</h2>
-<p>Desenvolvido para gerenciar tarefas diárias de um usuário, em que nela é possível adicionar e remover tarefas.</p>
+<p>Desenvolvido para gerenciar tarefas diárias de um usuário, em que nela é possível adicionar e remover tarefas. Junto dela temos o banco de dados MongoDB</p>
 <hr>
 <h2>⚜️Funcionalidades:⚜️</h2>
 <ul>
