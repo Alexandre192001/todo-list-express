@@ -11,7 +11,7 @@
         <div class="column is-one-fifth">
           <a href="/checklist/new" class="button is-success is-small">Nova Lista</a>
         </div>
-      </div>
+      </div> 
 
       <div class="columns is-multiline">
         <% checklists.forEach(checklist=>{%>
@@ -38,7 +38,7 @@
               </p>
               <p class="card-footer-item">
                 <span>
-                  <a href="#" class="has-text-danger">Remover</a>
+                  <a href="/checklists/<%= checklist.id %>?_method=delete" class="has-text-danger">Remover</a>
                 </span>
               </p>
             </footer>
