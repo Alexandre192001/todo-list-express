@@ -48,7 +48,7 @@ router.put("/:id", async (req,res)=>{
     res.redirect("/checklists")
   } catch (error) {
     let errors = error.errors;
-    res.status(422).render("checklist/edit", {checklist:{...checklist,errors}})
+    res.status(422).render("checklists/edit", {checklist:{...checklist,errors}})
   }
 })
 router.delete("/:id", async (req,res)=>{
