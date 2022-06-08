@@ -20,7 +20,9 @@
 <hr>
 <h2>⚜️Funcionalidades:⚜️</h2>
 <ul>
-<li>Em construção;</li>
+<li>Nova lista - Adiciona nova tarefa no banco;</li>
+<li>Editar - Editar tarefa;</li>
+<li>Deletar - Deletar tarefa.</li>
 
 </ul>
 <hr>
