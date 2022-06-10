@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
     let checklists = await Checklist.find({});
     res.render("checklists/index", {checklists: checklists})
   } catch (error) {
-    res.status(422).json(error);    
+    res.status(500).render("pages/error",{error:""})   
   }
 })
 
@@ -19,14 +19,8 @@ router.get("/new", async(req, res) => {
     res.status(500)
   }
 })
-router.get("/:id/edit", async(req, res) => {
-  try {
-    let checklist = await Checklist.findById(req.params.id);
-    res.status(200).render("checklists/edit",{checklist: checklist})
-  } catch (error) {
-    res.status(500);
-  }
-})
+
+
 router.post("/", async (req,res) => {
   let {name} = req.body.checklist
   let checklist = new Checklist({name})
@@ -38,12 +32,21 @@ router.post("/", async (req,res) => {
 }
 }) 
 
+router.get("/:id/editar", async (req, res) => {
+  try {
+    let checklist = await Checklist.findById(req.params.id);
+    res.status(200).render("checklists/editar",{checklist: checklist})
+  } catch (error) {
+    res.status(500).render("pages/error",{error:"Erro ao editar tarefa"}) 
+  }
+})
+
 router.get("/:id", async (req, res) => {
   try {
     let checklist = await Checklist.findById(req.params.id);
     res.render("checklists/show", {checklist: checklist})
   } catch (error) {
-    res.status(422).json(error)
+    res.status(500).render("pages/error",{error:"Ao pegar tarefa"}) 
   }
 })
 
@@ -52,20 +55,19 @@ router.put("/:id", async (req,res)=>{
   let checklist = await Checklist.findById(req.params.id);
   try {
     await checklist.update({name});
-    res.redirect("/checklists")
+    res.redirect("/checklist")
   } catch (error) {
-    let errors = error.erros;
-    res.status(422).render("checklists/edit",{checklist:{...checklist,errors}});
-
+    let errors = error.errors;
+    res.status(422).render("checklists/editar",{checklist:{...checklist,errors}});
   }
 })
 
 router.delete("/:id", async (req,res)=>{
   try {
     let checklist = await Checklist.findByIdAndRemove(req.params.id);
-     res.status(200).json(checklist)
+     res.redirect("/checklist")
   } catch (error) {
-    res.status(422).json(error)
+    res.status(500).render("pages/error",{error:"Error ao deletar tarefa"}) 
   }
 })
 
