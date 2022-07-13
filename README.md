@@ -20,9 +20,9 @@
 <hr>
 <h2>⚜️Funcionalidades:⚜️</h2>
 <ul>
-<li>Em Construção</li>
-
+<li>Ver - ver tarefas detalhadas dentro do checklist;</li>
+<li>Deletar - Deletar tarefa. </li>
 
 </ul>
 <hr>
-Link 
+
