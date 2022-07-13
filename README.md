@@ -21,8 +21,18 @@
 <h2>⚜️Funcionalidades:⚜️</h2>
 <ul>
 <li>Ver - ver tarefas detalhadas dentro do checklist;</li>
+<li>Editar - Editar tarefa;</li>
 <li>Deletar - Deletar tarefa. </li>
 
+</ul>
+<hr>
+<h2>⚜️Como iniciar o projeto⚜️</h2>
+<p>Se você quiser testar ou usar este projeto em sua máquina pessoal, clone este repositório seguindo o passo a passo à seguir:</p>
+<li>Abra o prompt do vscode;</li>
+<li>Escreva - git clone https://github.com/Alexandre192001/todo-list-express/</li>
+<li>cd todo-list-express</li>
+<li>npm install</li>
+<li>npm run server</li>
 </ul>
 <hr>
 
