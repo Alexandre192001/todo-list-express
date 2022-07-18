@@ -7,6 +7,7 @@ require("./config/database")
 
 const routerIndex = require("./src/routers/index")
 const checklistRouter = require("./src/routers/checklist")
+const TaskRouter = require("./src/routers/tasks")
 
 const app = express();
 app.use(express.json())
@@ -17,8 +18,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname,"public")))
 app.use("/", routerIndex)
 app.use("/checklist", checklistRouter)
-
-
+app.use("/checklist", TaskRouter.checklistDepedent)
 app.listen(3000,(req,res)=>{
   console.log("Servidor Iniciado")
 })

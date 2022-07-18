@@ -20,7 +20,6 @@ router.get("/new", async(req, res) => {
   }
 })
 
-
 router.post("/", async (req,res) => {
   let {name} = req.body.checklist
   let checklist = new Checklist({name})
@@ -43,7 +42,7 @@ router.get("/:id/editar", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    let checklist = await Checklist.findById(req.params.id);
+    let checklist = await Checklist.findById(req.params.id).populate('tasks');
     res.render("checklists/show", {checklist: checklist})
   } catch (error) {
     res.status(500).render("pages/error",{error:"Ao pegar tarefa"}) 
