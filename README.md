@@ -20,7 +20,7 @@
 <hr>
 <h2>⚜️Funcionalidades:⚜️</h2>
 <ul>
-<li>Ver - ver tarefas detalhadas dentro do checklist;</li>
+<li>Nova Lista - Cria uma nova tarefa;</li>
 <li>Editar - Editar tarefa;</li>
 <li>Deletar - Deletar tarefa. </li>
 
