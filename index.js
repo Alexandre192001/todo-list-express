@@ -18,6 +18,7 @@ app.use(express.static(path.join(__dirname,"public")))
 app.use("/", routerIndex)
 app.use("/checklist", checklistRouter)
 app.use("/checklist", TaskRouter.checklistDepedent)
+
 app.listen(porta,(req,res)=>{
   console.log("Servidor Iniciado")
 })
