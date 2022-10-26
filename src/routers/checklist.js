@@ -63,7 +63,7 @@ router.put("/:id", async (req,res)=>{
 
 router.delete("/:id", async (req,res)=>{
   try {
-    let checklist = await Checklist.findByIdAndRemove(req.params.id);
+    await Checklist.findByIdAndRemove(req.params.id);
      res.redirect("/checklist")
   } catch (error) {
     res.status(500).render("pages/error",{error:"Error ao deletar tarefa"}) 
