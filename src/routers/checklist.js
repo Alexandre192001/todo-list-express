@@ -5,7 +5,7 @@ const router = express.Router()
 router.get("/", async (req, res) => {
   try {
     let checklists = await Checklist.find({});
-    res.render("checklists/index", {checklists: checklists})
+    res.render("checklists/index", {checklists})
   } catch (error) {
     res.status(500).render("pages/error",{error:""})   
   }
@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 router.get("/new", async(req, res) => {
   try {
     let checklist = new Checklist();
-    res.status(200).render("checklists/new",{checklist: checklist})
+    res.status(200).render("checklists/new",{checklist})
   } catch (error) {
     res.status(500)
   }
